@@ -35,12 +35,13 @@ function hide(evt){
   updateCounts('invisible');
 }
 
+var totals = {
+  blue: 0,
+  green: 0,
+  invisible: 0
+}
+
 function updateCounts (color) {
-  var totals = {
-    blue: 0,
-    green: 0,
-    invisible: 0
-  }
   
   // WRITE CODE HERE TO COUNT BLUE, GREEN, AND INVISIBLE DOTS
   totals[color]++;
