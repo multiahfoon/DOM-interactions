@@ -20,17 +20,20 @@ function bindEventListeners (dots) {
 
 function makeGreen (evt) {
   evt.preventDefault()
+  evt.target.classList.remove('blue', 'invisible');
   evt.target.classList.toggle('green')
   updateCounts('green')
 }
 
 // CREATE FUNCTION makeBlue HERE
 function makeBlue (evt) {
+  evt.target.classList.remove('green', 'invisible');
   evt.target.classList.toggle('blue');
   updateCounts('blue');
 }
 // CREATE FUNCTION hide HERE
 function hide(evt){
+  evt.target.classList.remove('blue', 'green');
   evt.target.classList.toggle('invisible');
   updateCounts('invisible');
 }
@@ -45,7 +48,7 @@ function updateCounts (color) {
   
   // WRITE CODE HERE TO COUNT BLUE, GREEN, AND INVISIBLE DOTS
   totals[color]++;
-
+  
   // Once you've done the counting, this function will update the display
   displayTotals(totals)
 }
